@@ -21,6 +21,9 @@
 *.vrb
 *.xdv
 
-# Root-level PDFs produced by the main document build. Keep nested PDF
-# assets available for intentional figures or other reusable source material.
+# Root-level PDFs produced by document builds. Keep nested PDF assets available
+# for intentional figures or other reusable source material.
 /*.pdf
+
+# Repository build output
+/build/
