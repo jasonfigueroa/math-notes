@@ -55,5 +55,41 @@ Figures used by only one subject belong under that subject's directory in
 `figures/`. Assets reused across documents belong in `figures/shared/`.
 
 All LaTeX builds should be launched from the repository root so that input and
-figure paths resolve consistently. Reproducible build commands will be added as
-part of issue #1.
+figure paths resolve consistently.
+
+## Prerequisites
+
+- A LaTeX distribution that provides `pdflatex`. MiKTeX is recommended on
+  Windows.
+- PowerShell. PowerShell 7 (`pwsh`) is recommended and also works on macOS and
+  Linux.
+
+When installing MiKTeX, enable automatic installation of missing packages. Open
+a new terminal after installation so that `pdflatex` is available on `PATH`.
+
+## Build
+
+From PowerShell in the repository root, run:
+
+```powershell
+.\build.ps1
+```
+
+The command compiles each document twice so that its table of contents is
+current. It produces:
+
+- `build/algebra.pdf`
+- `build/discrete-structures.pdf`
+
+On macOS or Linux with PowerShell 7 installed, run `pwsh ./build.ps1`.
+
+## Clean
+
+Remove all generated build output with:
+
+```powershell
+.\clean.ps1
+```
+
+The cleanup command removes only the repository's `build/` directory. Source
+files and figure assets are not affected.
